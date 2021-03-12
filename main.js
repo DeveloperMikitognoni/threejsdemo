@@ -29,6 +29,13 @@ sphere3.position.x = -30;
 scene.add(sphere3);
 
 camera.position.z = 50;
+
+const domEvents = new THREEx.DomEvents(camera, renderer.domElement);
+
+domEvents.addEventListener(sphere, 'click', event => {
+    material.wireframe = false;
+})
+
 controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.minDistance = 1;
 controls.maxDistance = 500;
